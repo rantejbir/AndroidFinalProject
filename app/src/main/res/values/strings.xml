@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">AndroidFinalProject</string>
+    <string name="app_name">add_activity</string>
+    <string name="Drink">Enter the Drink</string>
+    <string name="ingredients">Enter the ingredients</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+
+
 </resources>
