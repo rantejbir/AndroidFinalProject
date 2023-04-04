@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         newEntry = new ArrayList<>() ;
         recyclerView = findViewById(R.id.recyclerviewid);
         jsonrequest();
-        com.com.cst2335.shar0686.ListDatabase db = com.com.cst2335.shar0686.ListDatabase.getInstance(this);
+        ListDatabase db = ListDatabase.getInstance(this);
         mDAO = db.listDao();
 
 

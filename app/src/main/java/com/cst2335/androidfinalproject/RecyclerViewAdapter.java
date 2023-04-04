@@ -2,10 +2,12 @@ package com.cst2335.androidfinalproject;
 
 import android.content.Context;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,27 +40,38 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view ;
+        View view;
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        view = inflater.inflate(R.layout.activity_list,parent,false) ;
+        view = inflater.inflate(R.layout.activity_list, parent, false);
+        final MyViewHolder viewHolder = new MyViewHolder(view);
+        viewHolder.view_container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent i = new Intent(mContext, list2.class);
+                i.putExtra("anime_name", mData.get(viewHolder.getAdapterPosition()).getName());
+                i.putExtra("anime_category", mData.get(viewHolder.getAdapterPosition()).getCategory());
+
+                i.putExtra("anime_rating", mData.get(viewHolder.getAdapterPosition()).getOther());
 
 
+                mContext.startActivity(i);
 
-
-
-        return new MyViewHolder(view);
+            }
+        });
+        return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.tv_name.setText(mData.get(position).getName());
-        holder.tv_rating.setText(mData.get(position).getOther());
+        holder.others.setText(mData.get(position).getOther());
 //        holder.tv_studio.setText(mData.get(position).getId());
         holder.tv_category.setText(mData.get(position).getCategory());
 
 
 
-        Glide.with(mContext).load("https://2039028l.ha.azioncdn.net/img/2023/02/produto/17477/03-maquina-solda-inversora-200a-alumig-200dp-boxer.png?ims=fit-in/800x800/filters:fill(white)").apply(option).into(holder.img_thumbnail);
+//        Glide.with(mContext).load("https://2039028l.ha.azioncdn.net/img/2023/02/produto/17477/03-maquina-solda-inversora-200a-alumig-200dp-boxer.png?ims=fit-in/800x800/filters:fill(white)").apply(option).into(holder.img_thumbnail);
 
 
 
@@ -72,11 +85,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_name ;
-        TextView tv_rating ;
-        TextView tv_studio ;
-        TextView tv_category;
-        ImageView img_thumbnail;
-//        LinearLayout view_container;
+        TextView others ;
+        TextView tv_category ;
+
+        LinearLayout view_container;
 
 
 
@@ -85,12 +97,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public MyViewHolder(View itemView) {
             super(itemView);
 //
-//            view_container = itemView.findViewById(R.id.container);
+            view_container = itemView.findViewById(R.id.container);
             tv_name = itemView.findViewById(R.id.anime_name);
             tv_category = itemView.findViewById(R.id.categorie);
-            tv_rating = itemView.findViewById(R.id.rating);
-            tv_studio = itemView.findViewById(R.id.studio);
-            img_thumbnail = itemView.findViewById(R.id.thumbnail);
+            others = itemView.findViewById(R.id.studio);
 
         }
     }
