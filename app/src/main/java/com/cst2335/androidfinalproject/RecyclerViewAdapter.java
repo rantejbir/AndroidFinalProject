@@ -1,0 +1,118 @@
+package com.cst2335.androidfinalproject;
+
+import android.content.Context;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+
+
+import java.util.List;
+
+
+/**
+ * Created by Aws on 11/03/2018.
+ */
+
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
+
+    private Context mContext ;
+    private List<list> mData ;
+    RequestOptions option;
+
+
+    public RecyclerViewAdapter(Context mContext, List<list> mData) {
+        this.mContext = mContext;
+        this.mData = mData;
+
+        // Request option for Glide
+        option = new RequestOptions().centerCrop().placeholder(R.drawable.loading).error(R.drawable.loading);
+
+    }
+
+    @Override
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
+        View view ;
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        view = inflater.inflate(R.layout.activity_list,parent,false) ;
+//        final MyViewHolder viewHolder = new MyViewHolder(view) ;
+//        viewHolder.view_container.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Intent i = new Intent(mContext, AnimeActivity.class);
+//                i.putExtra("anime_name",mData.get(viewHolder.getAdapterPosition()).getName());
+//                i.putExtra("anime_description",mData.get(viewHolder.getAdapterPosition()).getDescription());
+//                i.putExtra("anime_studio",mData.get(viewHolder.getAdapterPosition()).getStudio());
+//                i.putExtra("anime_category",mData.get(viewHolder.getAdapterPosition()).getCategorie());
+//                i.putExtra("anime_nb_episode",mData.get(viewHolder.getAdapterPosition()).getNb_episode());
+//                i.putExtra("anime_rating",mData.get(viewHolder.getAdapterPosition()).getRating());
+//                i.putExtra("anime_img",mData.get(viewHolder.getAdapterPosition()).getImage_url());
+//
+//                mContext.startActivity(i);
+//
+//            }
+//        });
+
+
+
+
+        return new MyViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(MyViewHolder holder, int position) {
+
+        holder.tv_name.setText(mData.get(position).getName());
+        holder.tv_rating.setText(mData.get(position).getRating());
+        holder.tv_studio.setText(mData.get(position).getStudio());
+        holder.tv_category.setText(mData.get(position).getCategorie());
+
+        // Load Image from the internet and set it into Imageview using Glide
+
+        Glide.with(mContext).load("https://2039028l.ha.azioncdn.net/img/2023/02/produto/17477/03-maquina-solda-inversora-200a-alumig-200dp-boxer.png?ims=fit-in/800x800/filters:fill(white)").apply(option).into(holder.img_thumbnail);
+
+
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return mData.size();
+    }
+
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
+
+        TextView tv_name ;
+        TextView tv_rating ;
+        TextView tv_studio ;
+        TextView tv_category;
+        ImageView img_thumbnail;
+//        LinearLayout view_container;
+
+
+
+
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+//
+//            view_container = itemView.findViewById(R.id.container);
+            tv_name = itemView.findViewById(R.id.anime_name);
+            tv_category = itemView.findViewById(R.id.categorie);
+            tv_rating = itemView.findViewById(R.id.rating);
+            tv_studio = itemView.findViewById(R.id.studio);
+            img_thumbnail = itemView.findViewById(R.id.thumbnail);
+
+        }
+    }
+
+}
