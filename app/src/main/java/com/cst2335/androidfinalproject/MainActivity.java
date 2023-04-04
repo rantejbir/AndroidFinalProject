@@ -65,9 +65,14 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         jsonObject = response.getJSONObject(i) ;
                         ListEntry addNew = new ListEntry() ;
+                     
                         addNew.setName(jsonObject.getString("name"));
-                        addNew.setCategory(jsonObject.getString("categorie"));
-                        addNew.setOther(jsonObject.getString("studio"));
+//                        addNew.setDescription(jsonObject.getString("description"));
+//                        addNew.setRating(jsonObject.getString("Rating"));
+//                        addNew.setCategorie(jsonObject.getString("categorie"));
+//                        addNew.setNb_episode(jsonObject.getInt("episode"));
+//                        addNew.setStudio(jsonObject.getString("studio"));
+//                        addNew.setImage_url(jsonObject.getString("img"));
                         newEntry.add(addNew);
                         new Thread(new Runnable() {
                             @Override
