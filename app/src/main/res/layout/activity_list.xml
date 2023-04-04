@@ -14,7 +14,7 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="match_parent"
-        android:background="@drawable/loading"
+        android:background="@drawable/"
         android:id="@+id/thumbnail"/>
 
     <LinearLayout

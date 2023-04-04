@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
+
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -13,7 +13,7 @@ import com.android.volley.VolleyError;
 
 
 import com.android.volley.toolbox.JsonArrayRequest;
-import com.android.volley.toolbox.StringRequest;
+
 import com.android.volley.toolbox.Volley;
 
 
@@ -23,14 +23,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,15 +65,15 @@ public class MainActivity extends AppCompatActivity {
 
                     try {
                         jsonObject = response.getJSONObject(i) ;
-                        list anime = new list() ;
-                        anime.setName(null);
-                        anime.setDescription(null);
-                        anime.setRating(null);
-                        anime.setCategorie(null);
-                        anime.setNb_episode(0);
-                        anime.setStudio(null);
-                        anime.setImage_url(null);
-                        lstAnime.add(anime);
+                        list addNew = new list() ;
+                        addNew.setName(jsonObject.getString("name"));
+                        addNew.setDescription(jsonObject.getString("description"));
+                        addNew.setRating(jsonObject.getString("Rating"));
+                        addNew.setCategorie(jsonObject.getString("categorie"));
+                        addNew.setNb_episode(jsonObject.getInt("episode"));
+                        addNew.setStudio(jsonObject.getString("studio"));
+                        addNew.setImage_url(jsonObject.getString("img"));
+                        lstAnime.add(addNew);
 
                     } catch (JSONException e) {
                         e.printStackTrace();
