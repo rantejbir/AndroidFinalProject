@@ -10,14 +10,8 @@ import android.os.Bundle;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-
-
 import com.android.volley.toolbox.JsonArrayRequest;
-
 import com.android.volley.toolbox.Volley;
-
-
-
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,12 +24,14 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-//    private String JSON_URL="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=mojito";
-        private final String JSON_URL = "https://gist.githubusercontent.com/aws1994/f583d54e5af8e56173492d3f60dd5ebf/raw/c7796ba51d5a0d37fc756cf0fd14e54434c547bc/anime.json" ;
+    //    private String JSON_URL="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=mojito";
+    private final String JSON_URL = "https://gist.githubusercontent.com/aws1994/f583d54e5af8e56173492d3f60dd5ebf/raw/c7796ba51d5a0d37fc756cf0fd14e54434c547bc/anime.json" ;
     private JsonArrayRequest request ;
     private RequestQueue requestQueue ;
-    private List<list> lstAnime ;
+    private List<ListEntry> newEntry;
+
     private RecyclerView recyclerView ;
+    ListDao mDAO;
 
 
     @Override
@@ -43,9 +39,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        lstAnime = new ArrayList<>() ;
+        newEntry = new ArrayList<>() ;
         recyclerView = findViewById(R.id.recyclerviewid);
         jsonrequest();
+        com.com.cst2335.shar0686.ListDatabase db = com.com.cst2335.shar0686.ListDatabase.getInstance(this);
+        mDAO = db.listDao();
+
 
 
 
@@ -65,15 +64,17 @@ public class MainActivity extends AppCompatActivity {
 
                     try {
                         jsonObject = response.getJSONObject(i) ;
-                        list addNew = new list() ;
+                        ListEntry addNew = new ListEntry() ;
                         addNew.setName(jsonObject.getString("name"));
-                        addNew.setDescription(jsonObject.getString("description"));
-                        addNew.setRating(jsonObject.getString("Rating"));
-                        addNew.setCategorie(jsonObject.getString("categorie"));
-                        addNew.setNb_episode(jsonObject.getInt("episode"));
-                        addNew.setStudio(jsonObject.getString("studio"));
-                        addNew.setImage_url(jsonObject.getString("img"));
-                        lstAnime.add(addNew);
+                        addNew.setCategory(jsonObject.getString("categorie"));
+                        addNew.setOther(jsonObject.getString("studio"));
+                        newEntry.add(addNew);
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                mDAO.insertEntry( addNew );
+                            }
+                        }).start();
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                setuprecyclerview(lstAnime);
+                setuprecyclerview(newEntry);
 
             }
         }, new Response.ErrorListener() {
@@ -99,10 +100,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setuprecyclerview(List<list> lstAnime) {
+    private void setuprecyclerview(List<ListEntry> lstAnime) {
 
 
-        RecyclerViewAdapter myadapter = new RecyclerViewAdapter(this,lstAnime) ;
+        RecyclerViewAdapter myadapter = new RecyclerViewAdapter(this,newEntry) ;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(myadapter);
 
