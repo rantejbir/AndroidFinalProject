@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private final String JSON_URL = "https://gist.githubusercontent.com/aws1994/f583d54e5af8e56173492d3f60dd5ebf/raw/c7796ba51d5a0d37fc756cf0fd14e54434c547bc/anime.json" ;
     private JsonArrayRequest request ;
     private RequestQueue requestQueue ;
-    private List<ListEntry> newEntry;
+    private List<list> newEntry;
 
     private RecyclerView recyclerView ;
     ListDao mDAO;
@@ -64,22 +64,15 @@ public class MainActivity extends AppCompatActivity {
 
                     try {
                         jsonObject = response.getJSONObject(i) ;
-                        ListEntry addNew = new ListEntry() ;
+                        list addNew = new list() ;
                      
                         addNew.setName(jsonObject.getString("name"));
-//                        addNew.setDescription(jsonObject.getString("description"));
-//                        addNew.setRating(jsonObject.getString("Rating"));
-//                        addNew.setCategorie(jsonObject.getString("categorie"));
-//                        addNew.setNb_episode(jsonObject.getInt("episode"));
-//                        addNew.setStudio(jsonObject.getString("studio"));
-//                        addNew.setImage_url(jsonObject.getString("img"));
+
+                        addNew.setCategory(jsonObject.getString("categorie"));
+                        addNew.setOthers(jsonObject.getString("episode"));
+
                         newEntry.add(addNew);
-                        new Thread(new Runnable() {
-                            @Override
-                            public void run() {
-                                mDAO.insertEntry( addNew );
-                            }
-                        }).start();
+
 
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -105,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setuprecyclerview(List<ListEntry> lstAnime) {
+    private void setuprecyclerview(List<list> lstAnime) {
 
 
         RecyclerViewAdapter myadapter = new RecyclerViewAdapter(this,newEntry) ;

@@ -25,10 +25,10 @@ public class list2 extends AppCompatActivity {
 
             // Recieve data
 
-            String name  = getIntent().getExtras().getString("anime_name");
-            String category = getIntent().getExtras().getString("anime_category");
+            String name  = getIntent().getExtras().getString("name");
+            String category = getIntent().getExtras().getString("category");
 
-            String others = getIntent().getExtras().getString("anime_rating") ;
+            String others = getIntent().getExtras().getString("others") ;
 
 
             // ini views
