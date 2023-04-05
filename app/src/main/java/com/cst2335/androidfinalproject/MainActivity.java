@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 
 import com.android.volley.RequestQueue;
@@ -47,7 +51,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        Button btn3=findViewById(R.id.MyList);
+        btn3.setOnClickListener(clk -> {
+            Intent i = new Intent(MainActivity.this, LoginMyList.class);
 
+            startActivity(i);
+        });
     }
 
     private void jsonrequest() {

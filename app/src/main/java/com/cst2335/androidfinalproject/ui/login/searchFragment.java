@@ -1,5 +1,8 @@
 package com.cst2335.androidfinalproject.ui.login;
 
+import static android.content.Context.MODE_PRIVATE;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +19,8 @@ public class searchFragment extends Fragment {
     private EditText searchText;
 
     private Button btn;
+    public static final String SHARED = "sharedPrefs";
+    public String search = "text";
 
     public searchFragment() {
         // Required empty public constructor
@@ -31,11 +36,17 @@ public class searchFragment extends Fragment {
 
         btn = view.findViewById(R.id.login);
 
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        String name1 = sharedPreferences.getString(search, "");
+        searchText.setText(name1);
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = searchText.getText().toString();
-
+                String str = searchText.getText().toString();
+                editor.putString(search,str);
+                editor.apply();
             }
         });
 

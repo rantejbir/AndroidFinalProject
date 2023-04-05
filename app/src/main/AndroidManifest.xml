@@ -19,7 +19,7 @@
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity3"
+            android:name=".LoginMyList"
             android:exported="true" />
         <activity
             android:name=".MyListView"
