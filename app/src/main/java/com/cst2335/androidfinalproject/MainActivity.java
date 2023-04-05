@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity {
     private JsonArrayRequest request ;
     private RequestQueue requestQueue ;
     private List<list> newEntry;
-
+    private ListDao mDAO;
     private RecyclerView recyclerView ;
-    ListDao mDAO;
+
 
 
     @Override
@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         newEntry = new ArrayList<>() ;
         recyclerView = findViewById(R.id.recyclerviewid);
         jsonrequest();
-        ListDatabase db = ListDatabase.getInstance(this);
-        mDAO = db.listDao();
+//        ListDatabase db = ListDatabase.getInstance(this);
+//        mDAO = db.listDao();
 
 
 
@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                         addNew.setOthers(jsonObject.getString("episode"));
 
                         newEntry.add(addNew);
+
 
 
                     } catch (JSONException e) {
