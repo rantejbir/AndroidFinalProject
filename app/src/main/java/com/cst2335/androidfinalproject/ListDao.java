@@ -13,6 +13,8 @@ public interface ListDao {
     @Query("Select * from ListEntry")
     public List<ListEntry> getAllEntries();
 
+    @Query("SELECT * FROM ListEntry WHERE id = :id")
+    ListEntry getById(int id);
     @Delete
     public void DeleteEntry(ListEntry m);
 }

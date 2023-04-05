@@ -25,7 +25,7 @@ public class RecyclerViewAdapter2 extends RecyclerView.Adapter<RecyclerViewAdapt
     private List<ListEntry> mData ;
     RequestOptions option;
 
-
+public RecyclerViewAdapter2(){}
     public RecyclerViewAdapter2(Context mContext, List<ListEntry> mData) {
         this.mContext = mContext;
         this.mData = mData;
@@ -46,12 +46,13 @@ public class RecyclerViewAdapter2 extends RecyclerView.Adapter<RecyclerViewAdapt
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(mContext, list2.class);
+                Intent i = new Intent(mContext, list3.class);
                 i.putExtra("name", mData.get(viewHolder.getAdapterPosition()).getName());
 
                 i.putExtra("category", mData.get(viewHolder.getAdapterPosition()).getCategory());
 
                 i.putExtra("others", mData.get(viewHolder.getAdapterPosition()).getOther());
+                i.putExtra("id", mData.get(viewHolder.getAdapterPosition()).getId());
 
                 mContext.startActivity(i);
 
