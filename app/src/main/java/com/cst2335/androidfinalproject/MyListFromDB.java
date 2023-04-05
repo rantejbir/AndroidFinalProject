@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity2 extends AppCompatActivity {
+public class MyListFromDB extends AppCompatActivity {
     private List<ListEntry> newEntry=new ArrayList<>();
     private ListDao mDAO;
     private RecyclerView recyclerView ;

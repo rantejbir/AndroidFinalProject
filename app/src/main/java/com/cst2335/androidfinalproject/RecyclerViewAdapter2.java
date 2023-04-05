@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -50,7 +49,7 @@ public RecyclerViewAdapter2(){}
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(mContext, list3.class);
+                Intent i = new Intent(mContext, MyListView.class);
                 i.putExtra("name", mData.get(viewHolder.getAdapterPosition()).getName());
 
                 i.putExtra("category", mData.get(viewHolder.getAdapterPosition()).getCategory());

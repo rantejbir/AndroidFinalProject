@@ -3,23 +3,16 @@ package com.cst2335.androidfinalproject;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
-import java.util.ArrayList;
-import java.util.List;
 
-
-public class list2 extends AppCompatActivity {
+public class ListOfAllEntries extends AppCompatActivity {
     String name=" ";
     String category=" ";
     String others=" ";
@@ -69,7 +62,7 @@ public class list2 extends AppCompatActivity {
         // set image using Glide
         Button btn=findViewById(R.id.button);
         btn.setOnClickListener(clk -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(list2.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(ListOfAllEntries.this);
             builder.setMessage("Do you want to Add the item to your List: " + n.getName())
                     .setTitle(R.string.popup)
                     .setNegativeButton(R.string.no, (dialog, cl) -> {

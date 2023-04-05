@@ -5,21 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
-public class list3 extends AppCompatActivity {
+public class MyListView extends AppCompatActivity {
     String name=" ";
     String category=" ";
     String others=" ";
@@ -78,7 +74,7 @@ public class list3 extends AppCompatActivity {
         Button btn=findViewById(R.id.button);
 
         btn.setOnClickListener(clk -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(list3.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(MyListView.this);
             builder.setMessage("Do you want to delete the item from List: " + n.getName())
                     .setTitle(R.string.popup)
                     .setNegativeButton(R.string.no, (dialog, cl) -> {
@@ -91,7 +87,7 @@ public class list3 extends AppCompatActivity {
                                 mDAO.DeleteEntry(n);
                             }
                         }).start();
-                        Intent i = new Intent(list3.this, MainActivity2.class);
+                        Intent i = new Intent(MyListView.this, MyListFromDB.class);
                         i.putExtra("delOrNo","yes");
                         startActivity(i);
                     })

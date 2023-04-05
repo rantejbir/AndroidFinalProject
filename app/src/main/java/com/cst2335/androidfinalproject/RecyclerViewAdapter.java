@@ -46,7 +46,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(mContext, list2.class);
+                Intent i = new Intent(mContext, ListOfAllEntries.class);
                 i.putExtra("name", mData.get(viewHolder.getAdapterPosition()).getName());
 
                 i.putExtra("category", mData.get(viewHolder.getAdapterPosition()).getCategory());
