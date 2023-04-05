@@ -1,5 +1,6 @@
 package com.cst2335.androidfinalproject;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -74,21 +76,27 @@ public class list3 extends AppCompatActivity {
         }).start();
 
         Button btn=findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mDAO.DeleteEntry(n);
-                    }
-                }).start();
-                Intent i = new Intent(list3.this, MainActivity2.class);
+        btn.setOnClickListener(clk -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(list3.this);
+            builder.setMessage("Do you want to delete the item from List: " + n.getName())
+                    .setTitle(R.string.popup)
+                    .setNegativeButton(R.string.no, (dialog, cl) -> {
+                        Toast.makeText(this, R.string.toast_message_del_no, Toast.LENGTH_LONG).show();
+                    })
+                    .setPositiveButton(R.string.yes, (dialog, cl) -> {
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                mDAO.DeleteEntry(n);
+                            }
+                        }).start();
+                        Intent i = new Intent(list3.this, MainActivity2.class);
+                        i.putExtra("delOrNo","yes");
+                        startActivity(i);
+                    })
+                    .create().show();
 
-
-                startActivity(i);
-            }
         });
 
 

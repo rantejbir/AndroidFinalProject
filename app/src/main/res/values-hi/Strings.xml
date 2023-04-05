@@ -5,4 +5,9 @@
     <string name="ingredients">सामग्री दर्ज करें</string>
     <string name="add">जोड़ना</string>
     <string name="cancel">रद्द करना</string>
+    <string name="popup">question:</string>
+    <string name="no">no</string>
+    <string name="yes">yes</string>
+    <string name="toast_message_del_no">Item not Deleted</string>
+    <string name="toast_message_del_yes">Item deleted from List</string>
 </resources>

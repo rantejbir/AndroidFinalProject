@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,12 +24,14 @@ public class RecyclerViewAdapter2 extends RecyclerView.Adapter<RecyclerViewAdapt
 
     private Context mContext ;
     private List<ListEntry> mData ;
+
     RequestOptions option;
 
 public RecyclerViewAdapter2(){}
     public RecyclerViewAdapter2(Context mContext, List<ListEntry> mData) {
         this.mContext = mContext;
         this.mData = mData;
+
 
         // Request option for Glide
         option = new RequestOptions().centerCrop().placeholder(R.drawable.loading).error(R.drawable.loading);
@@ -41,6 +44,7 @@ public RecyclerViewAdapter2(){}
         View view;
         LayoutInflater inflater = LayoutInflater.from(mContext);
         view = inflater.inflate(R.layout.activity_list, parent, false);
+
         final MyViewHolder viewHolder = new MyViewHolder(view);
         viewHolder.view_container.setOnClickListener(new View.OnClickListener() {
             @Override

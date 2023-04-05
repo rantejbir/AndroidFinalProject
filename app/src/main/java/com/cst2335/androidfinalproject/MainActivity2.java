@@ -3,7 +3,10 @@ package com.cst2335.androidfinalproject;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +16,7 @@ public class MainActivity2 extends AppCompatActivity {
     private List<ListEntry> newEntry=new ArrayList<>();
     private ListDao mDAO;
     private RecyclerView recyclerView ;
-
+    String n="no";
 
 
     @Override
@@ -29,8 +32,15 @@ public class MainActivity2 extends AppCompatActivity {
 
             }
         }).start();
+        Intent i=getIntent();
+        if((i.getStringExtra("delOrNo"))!=null){
+            n = i.getStringExtra("delOrNo");
+            if(n.equals("yes")){
+                Toast.makeText(this, R.string.toast_message_del_yes, Toast.LENGTH_LONG).show();
+            }
+        }
 
-//
+
         recyclerView = findViewById(R.id.recyclerviewid);
         setuprecyclerview(newEntry);
     }

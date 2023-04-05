@@ -1,12 +1,15 @@
 package com.cst2335.androidfinalproject;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
@@ -65,19 +68,25 @@ public class list2 extends AppCompatActivity {
         n = new ListEntry(name,category,others);
         // set image using Glide
         Button btn=findViewById(R.id.button);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                n = new ListEntry("name","""category""",others);
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mDAO.insertEntry(n);
+        btn.setOnClickListener(clk -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(list2.this);
+            builder.setMessage("Do you want to Add the item to your List: " + n.getName())
+                    .setTitle(R.string.popup)
+                    .setNegativeButton(R.string.no, (dialog, cl) -> {
+                        Toast.makeText(this, R.string.toast_message2, Toast.LENGTH_LONG).show();
+                    })
+                    .setPositiveButton(R.string.yes, (dialog, cl) -> {
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                mDAO.insertEntry(n);
+                            }
+                        }).start();
 
-                    }
-                }).start();
+                        Toast.makeText(this, R.string.toast_message, Toast.LENGTH_LONG).show();
+                    })
+                    .create().show();
 
-            }
         });
 
 
