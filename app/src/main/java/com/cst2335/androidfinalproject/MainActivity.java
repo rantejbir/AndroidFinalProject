@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private final String JSON_URL = "https://gist.githubusercontent.com/aws1994/f583d54e5af8e56173492d3f60dd5ebf/raw/c7796ba51d5a0d37fc756cf0fd14e54434c547bc/anime.json" ;
     private JsonArrayRequest request ;
     private RequestQueue requestQueue ;
-    private List<list> newEntry;
+    private List<ListEntry> newEntry;
     private ListDao mDAO;
     private RecyclerView recyclerView ;
 
@@ -64,12 +64,12 @@ public class MainActivity extends AppCompatActivity {
 
                     try {
                         jsonObject = response.getJSONObject(i) ;
-                        list addNew = new list() ;
-                     
+                        ListEntry addNew = new ListEntry() ;
+
                         addNew.setName(jsonObject.getString("name"));
 
                         addNew.setCategory(jsonObject.getString("categorie"));
-                        addNew.setOthers(jsonObject.getString("episode"));
+                        addNew.setOther(jsonObject.getString("episode"));
 
                         newEntry.add(addNew);
 
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setuprecyclerview(List<list> lstAnime) {
+    private void setuprecyclerview(List<ListEntry> lstAnime) {
 
 
         RecyclerViewAdapter myadapter = new RecyclerViewAdapter(this,newEntry) ;

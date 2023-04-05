@@ -6,13 +6,11 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 
@@ -24,11 +22,11 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     private Context mContext ;
-    private List<list> mData ;
+    private List<ListEntry> mData ;
     RequestOptions option;
 
 
-    public RecyclerViewAdapter(Context mContext, List<list> mData) {
+    public RecyclerViewAdapter(Context mContext, List<ListEntry> mData) {
         this.mContext = mContext;
         this.mData = mData;
 
@@ -53,7 +51,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
                 i.putExtra("category", mData.get(viewHolder.getAdapterPosition()).getCategory());
 
-                i.putExtra("others", mData.get(viewHolder.getAdapterPosition()).getOthers());
+                i.putExtra("others", mData.get(viewHolder.getAdapterPosition()).getOther());
 
                 mContext.startActivity(i);
 
@@ -65,7 +63,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.name.setText(mData.get(position).getName());
-        holder.category.setText(mData.get(position).getOthers());
+        holder.category.setText(mData.get(position).getOther());
         holder.category.setText(mData.get(position).getCategory());
 
 

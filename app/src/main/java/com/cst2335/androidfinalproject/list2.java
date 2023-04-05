@@ -17,20 +17,21 @@ import java.util.List;
 
 
 public class list2 extends AppCompatActivity {
-    String name="";
-    String category="";
-    String others="";
+    String name=" ";
+    String category=" ";
+    String others=" ";
     ListDao mDAO;
 
 
 
-    ListEntry n=new ListEntry("","","");
+    ListEntry n=new ListEntry();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list2);
 
-
+        ListDatabase db = ListDatabase.getInstance(this);
+        mDAO = db.listDao();
 
         getSupportActionBar().hide();
         name = getIntent().getExtras().getString("name");
@@ -67,7 +68,7 @@ public class list2 extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+//                n = new ListEntry("name","""category""",others);
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -75,6 +76,7 @@ public class list2 extends AppCompatActivity {
 
                     }
                 }).start();
+
             }
         });
 

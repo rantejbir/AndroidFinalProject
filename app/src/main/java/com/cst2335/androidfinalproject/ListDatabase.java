@@ -10,7 +10,7 @@ import com.cst2335.androidfinalproject.ListEntry;
 
 @Database(entities = {ListEntry.class},version = 1)
 public abstract class ListDatabase extends RoomDatabase {
-    static String DB_NAME="ListDB";
+    static String DB_NAME="List";
     public abstract ListDao listDao();
     private static ListDatabase mInstance;
     public static synchronized ListDatabase getInstance(Context ctx) {

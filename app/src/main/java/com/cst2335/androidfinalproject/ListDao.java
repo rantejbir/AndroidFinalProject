@@ -14,5 +14,5 @@ public interface ListDao {
     public List<ListEntry> getAllEntries();
 
     @Delete
-    public void DeleteEntries(ListEntry m);
+    public void DeleteEntry(ListEntry m);
 }

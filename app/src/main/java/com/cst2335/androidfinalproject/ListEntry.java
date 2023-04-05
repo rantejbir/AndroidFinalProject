@@ -8,12 +8,24 @@ import androidx.room.PrimaryKey;
 @Entity
 public class ListEntry {
 
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    @ColumnInfo(name = "id")
+    public int id;
     @ColumnInfo(name = "name")
     private String name;
     @ColumnInfo(name = "category")
     private String category;
     @ColumnInfo(name = "other")
     private String other;
+
+
+    public ListEntry(String name, String category, String other) {
+        this.name = name;
+        this.category = category;
+        this.other = other;
+
+    }
 
     public String getOther() {
         return other;
@@ -23,10 +35,7 @@ public class ListEntry {
         this.other = other;
     }
 
-    @PrimaryKey(autoGenerate = true)
-    @NonNull
-    @ColumnInfo(name = "id")
-    public int id;
+
 
     public ListEntry() {
     }
@@ -55,10 +64,5 @@ public class ListEntry {
         this.id=id;
     }
 
-    public ListEntry(String name, String category, String other) {
-        this.name = name;
-        this.category = category;
-        this.other = other;
 
-    }
 }
