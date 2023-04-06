@@ -2,12 +2,10 @@ package com.cst2335.androidfinalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
 
 import com.cst2335.androidfinalproject.ui.login.AddNewFragment;
-import com.cst2335.androidfinalproject.ui.login.searchFragment;
 
 public class MainActivity2 extends AppCompatActivity {
 
