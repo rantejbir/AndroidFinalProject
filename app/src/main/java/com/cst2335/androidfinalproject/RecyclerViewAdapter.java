@@ -92,7 +92,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             view_container = itemView.findViewById(R.id.container);
             name = itemView.findViewById(R.id.anime_name);
             category = itemView.findViewById(R.id.categorie);
-            others = itemView.findViewById(R.id.studio);
+            others = itemView.findViewById(R.id.aa_rating);
+
 
 
         }

@@ -10,4 +10,8 @@
     <string name="yes">yes</string>
     <string name="toast_message_del_no">Item not Deleted</string>
     <string name="toast_message_del_yes">Item deleted from List</string>
+    <string name="NameDrink">Name Of Drink</string>
+    <string name="Category">Category</string>
+    <string name="instruction">Instructions</string>
+    <string name="AddTheDrink">Add Drink</string>
 </resources>

@@ -23,7 +23,7 @@
             app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="48dp"
             app:layout_scrollFlags="exitUntilCollapsed|scroll"
-            app:title="Anime Title">
+            app:title="Title">
 
             <androidx.appcompat.widget.Toolbar
                 android:layout_width="match_parent"
@@ -40,14 +40,16 @@
                 android:padding="50dp">
 
 
+
+
                 <ImageView
-                    android:id="@+id/aa_thumbnail"
-                    android:layout_width="100dp"
+                    android:layout_width="150dp"
                     android:layout_height="match_parent"
-                    android:background="@drawable/loading" />
+                    android:background="@drawable/loading"
+                    app:srcCompat="@mipmap/img_2" />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="80dp"
                     android:layout_height="130dp"
                     android:layout_margin="8dp"
                     android:orientation="vertical">
@@ -57,7 +59,7 @@
                         android:id="@+id/aa_anime_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Anime Title"
+                        android:text=" "
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -67,27 +69,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
                         android:text="Category" />
-
-
-                    <TextView
-                        android:id="@+id/aa_rating"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:drawableLeft="@drawable/star"
-
-                        android:paddingRight="5dp"
-                        android:text="0.0"
-                        android:textColor="#fff"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/aa_studio"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Studio" />
 
 
                 </LinearLayout>
@@ -105,26 +86,38 @@
         android:layout_width="410dp"
         android:layout_height="61dp"
         android:layout_marginEnd="3dp"
-        android:layout_marginBottom="321dp"
+        android:layout_marginBottom="92dp"
         android:text="Add To List"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/aa_rating"
+        android:layout_width="361dp"
+        android:layout_height="213dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="9dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/appbarlayout_id"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/appbarlayout_id" />
 
     <!--    <EditText-->
-<!--        android:id="@+id/aa_description"-->
-<!--        android:layout_width="340dp"-->
-<!--        android:layout_height="347dp"-->
-<!--        android:ems="10"-->
-<!--        android:inputType="textPersonName"-->
-<!--        android:text="Name"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/appbarlayout_id"-->
-<!--        app:layout_constraintVertical_bias="0.187"-->
-<!--        tools:layout_editor_absoluteX="31dp" />-->
+    <!--        android:id="@+id/aa_description"-->
+    <!--        android:layout_width="340dp"-->
+    <!--        android:layout_height="347dp"-->
+    <!--        android:ems="10"-->
+    <!--        android:inputType="textPersonName"-->
+    <!--        android:text="Name"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/appbarlayout_id"-->
+    <!--        app:layout_constraintVertical_bias="0.187"-->
+    <!--        tools:layout_editor_absoluteX="31dp" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

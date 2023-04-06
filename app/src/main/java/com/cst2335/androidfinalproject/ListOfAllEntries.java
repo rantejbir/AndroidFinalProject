@@ -3,6 +3,7 @@ package com.cst2335.androidfinalproject;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -37,6 +38,7 @@ public class ListOfAllEntries extends AppCompatActivity {
 
 
 
+        @SuppressLint("WrongViewCast")
         CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsingtoolbar_id);
         collapsingToolbarLayout.setTitleEnabled(true);
 

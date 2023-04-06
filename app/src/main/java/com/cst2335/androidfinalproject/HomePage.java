@@ -38,7 +38,7 @@ public class HomePage extends AppCompatActivity {
         });
         ImageButton btn3=findViewById(R.id.allList);
         btn3.setOnClickListener(clk -> {
-            Intent i = new Intent(HomePage.this, MainActivity.class);
+            Intent i = new Intent(HomePage.this, LoginMyList.class);
             startActivity(i);
         });
 

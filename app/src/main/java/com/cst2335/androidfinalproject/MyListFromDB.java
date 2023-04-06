@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -25,6 +27,21 @@ public class MyListFromDB extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ListDatabase db = ListDatabase.getInstance(this);
         mDAO = db.listDao();
+//        Intent in = getIntent();
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"})
+        Button btn3 = findViewById(R.id.MyList);
+        btn3.setOnClickListener(clk -> {
+
+            Intent in = new Intent(MyListFromDB.this, HomePage.class);
+
+            startActivity(in);
+        });
+        Button btn4 = findViewById(R.id.more);
+        btn4.setOnClickListener(clk -> {
+
+            Intent in = new Intent(MyListFromDB.this, MainActivity2.class);
+            startActivity(in);
+        });
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -32,13 +49,14 @@ public class MyListFromDB extends AppCompatActivity {
 
             }
         }).start();
-        Intent i=getIntent();
-        if((i.getStringExtra("delOrNo"))!=null){
-            n = i.getStringExtra("delOrNo");
+        Intent ini=getIntent();
+        if((ini.getStringExtra("delOrNo"))!=null){
+            n = ini.getStringExtra("delOrNo");
             if(n.equals("yes")){
                 Toast.makeText(this, R.string.toast_message_del_yes, Toast.LENGTH_LONG).show();
             }
         }
+
 
 
         recyclerView = findViewById(R.id.recyclerviewid);

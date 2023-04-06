@@ -23,6 +23,10 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="NameDrink">Name Of Drink</string>
+    <string name="Category">Category</string>
+    <string name="instruction">Instructions</string>
+    <string name="AddTheDrink">Add Drink</string>
 
 
 </resources>

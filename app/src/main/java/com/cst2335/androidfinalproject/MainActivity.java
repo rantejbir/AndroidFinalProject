@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
                                         addNew.setName(cocktailJson.getString("strDrink"));
                                         addNew.setCategory(cocktailJson.getString("strCategory"));
-                                        addNew.setOther(cocktailJson.getString("strTags"));
+                                        addNew.setOther(cocktailJson.getString("strInstructions"));
 
                                     }
                                 } catch (JSONException e) {
