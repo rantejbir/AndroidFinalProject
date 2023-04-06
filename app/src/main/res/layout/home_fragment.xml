@@ -6,18 +6,9 @@
     android:padding="16dp">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="622dp"
-        android:text="Group Project:
-
-This is our final project of our android, with the cocktail database. In this project we are fetching the data from the URL of the website to our program and then, adding and deleting them from our database.
-
-
-
-
-
-
-        Team member: Samarth, Rantejbir and Daksh"
+        android:layout_width="397dp"
+        android:layout_height="272dp"
+        android:text="AI technologies such as machine learning, natural language processing, and computer vision are being used in a variety of industries to automate processes and enhance decision-making capabilities."
         android:textSize="24sp"
         android:textStyle="bold" />
 

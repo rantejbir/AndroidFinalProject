@@ -2,10 +2,12 @@ package com.cst2335.androidfinalproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
 
 import com.cst2335.androidfinalproject.ui.login.AddNewFragment;
+import com.cst2335.androidfinalproject.ui.login.searchFragment;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -28,7 +30,7 @@ public class MainActivity2 extends AppCompatActivity {
         });
         ImageButton btn5=findViewById(R.id.Addnew);
         btn5.setOnClickListener(clk -> {
-            AddNewFragment homeFragment1 = new AddNewFragent();
+            AddNewFragment homeFragment1 = new AddNewFragment();
 
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, homeFragment1)
