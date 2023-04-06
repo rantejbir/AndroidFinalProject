@@ -30,7 +30,7 @@ public class MainActivity2 extends AppCompatActivity {
         });
         ImageButton btn5=findViewById(R.id.Addnew);
         btn5.setOnClickListener(clk -> {
-            AddNewFragment homeFragment1 = new AddNewFragment();
+            AddNewFragment homeFragment1 = new AddNewFragent();
 
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, homeFragment1)
