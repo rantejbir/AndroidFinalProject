@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -17,6 +18,7 @@ import com.cst2335.androidfinalproject.LoginMyList;
 import com.cst2335.androidfinalproject.MainActivity;
 import com.cst2335.androidfinalproject.MyListFromDB;
 import com.cst2335.androidfinalproject.R;
+import com.google.android.material.snackbar.Snackbar;
 
 public class LoginFragment extends Fragment {
 
@@ -37,7 +39,6 @@ public class LoginFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.login_fragment, container, false);
-
         emailEditText = view.findViewById(R.id.emailEditText);
         passwordEditText = view.findViewById(R.id.passwordEditText);
         loginButton = view.findViewById(R.id.loginButton);
@@ -45,8 +46,7 @@ public class LoginFragment extends Fragment {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         String usern = sharedPreferences.getString(user, "");
         String passn = sharedPreferences.getString(pass, "");
-        emailEditText.setText(usern);
-        passwordEditText.setText(passn);
+
 
 
         loginButton.setOnClickListener(new View.OnClickListener() {
@@ -55,15 +55,23 @@ public class LoginFragment extends Fragment {
                 String email = emailEditText.getText().toString();
                 String password = passwordEditText.getText().toString();
 
-                editor.putString(user,email);
-                editor.putString(pass,password);
-                editor.apply();
-                Intent i = new Intent(getActivity(), MyListFromDB.class);
+                if((usern.equals(email))&&passn.equals(password)){
+                    Intent i = new Intent(getActivity(), MyListFromDB.class);
+                    startActivity(i);
+                }
+                else{
+                    View rootView = view.findViewById(android.R.id.content);
+
+
+                    int toast_login;
+                    Toast.makeText(getActivity(), R.string.loginNo, Toast.LENGTH_LONG).show();
+
+                }
+
 //
-            startActivity(i);
+
             }
         });
-
         return view;
     }
 }

@@ -75,37 +75,37 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         });
         try {
-                //this goes in the button click handler:
-                JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, JSON_URL, null,
-                        (response) -> {
+            //this goes in the button click handler:
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, JSON_URL, null,
+                    (response) -> {
+                        try {
+                            ListEntry addNew = new ListEntry(" "," "," ");
                             try {
-                                ListEntry addNew = new ListEntry(" "," "," ");
-                                try {
-                                    JSONArray drinksArray = response.getJSONArray("drinks");
+                                JSONArray drinksArray = response.getJSONArray("drinks");
 
-                                    for (int i = 0; i < drinksArray.length(); i++) {
+                                for (int i = 0; i < drinksArray.length(); i++) {
 
-                                        JSONObject cocktailJson = drinksArray.getJSONObject(i);
+                                    JSONObject cocktailJson = drinksArray.getJSONObject(i);
 
 
-                                        addNew.setName(cocktailJson.getString("strDrink"));
-                                        addNew.setCategory(cocktailJson.getString("strCategory"));
-                                        addNew.setOther(cocktailJson.getString("strInstructions"));
+                                    addNew.setName(cocktailJson.getString("strDrink"));
+                                    addNew.setCategory(cocktailJson.getString("strCategory"));
+                                    addNew.setOther(cocktailJson.getString("strInstructions"));
 
-                                    }
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
                                 }
-                                newEntry.add(addNew);
-                                setuprecyclerview(newEntry);
-                            } catch (Exception e) {
+                            } catch (JSONException e) {
                                 e.printStackTrace();
                             }
-                        },
-                        (error) -> {
-                            Log.e("TAG", "error");
-                        });
-                queue.add(request);
+                            newEntry.add(addNew);
+                            setuprecyclerview(newEntry);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    },
+                    (error) -> {
+                        Log.e("TAG", "error");
+                    });
+            queue.add(request);
 
 
         } catch (Exception e) {

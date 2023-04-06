@@ -27,6 +27,8 @@
     <string name="Category">Category</string>
     <string name="instruction">Instructions</string>
     <string name="AddTheDrink">Add Drink</string>
+    <string name="loginNo">Login Not SuccessFull</string>
+    <string name="Register">Registered Successfully</string>
 
 
 </resources>

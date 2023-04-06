@@ -2,11 +2,13 @@ package com.cst2335.androidfinalproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.cst2335.androidfinalproject.ui.login.searchFragment;
+import com.google.android.material.snackbar.Snackbar;
 
 public class HomePage extends AppCompatActivity {
 
@@ -19,6 +21,12 @@ public class HomePage extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, homeFragment)
                 .commit();
+        View rootView = findViewById(android.R.id.content);
+
+// Create a Snackbar object
+        Snackbar snackbar = Snackbar.make(rootView, "Hello, Snackbar!", Snackbar.LENGTH_LONG);
+
+
 
         ImageButton btn=findViewById(R.id.helpButton);
         btn.setOnClickListener(clk -> {

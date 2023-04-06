@@ -22,8 +22,11 @@ public class MainActivity2 extends AppCompatActivity {
                 .commit();
         ImageButton btn=findViewById(R.id.helpButton);
         btn.setOnClickListener(clk -> {
-            Intent i = new Intent(MainActivity2.this, LoginMyList.class);
-            startActivity(i);
+            HomeFragment homeFragment1 = new HomeFragment();
+
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, homeFragment1)
+                    .commit();
         });
         ImageButton btn5=findViewById(R.id.Addnew);
         btn5.setOnClickListener(clk -> {
