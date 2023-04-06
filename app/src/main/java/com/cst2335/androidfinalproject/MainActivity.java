@@ -7,14 +7,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -22,19 +28,22 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    //    private String JSON_URL="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=mojito";
-    private final String JSON_URL = "https://gist.githubusercontent.com/aws1994/f583d54e5af8e56173492d3f60dd5ebf/raw/c7796ba51d5a0d37fc756cf0fd14e54434c547bc/anime.json" ;
+    String URL="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
+
     private JsonArrayRequest request ;
     private RequestQueue requestQueue ;
     private List<ListEntry> newEntry;
     private ListDao mDAO;
     private RecyclerView recyclerView ;
+    protected RequestQueue queue = null;
 
 
 
@@ -43,71 +52,68 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        newEntry = new ArrayList<>() ;
+        newEntry = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerviewid);
-        jsonrequest();
-//        ListDatabase db = ListDatabase.getInstance(this);
-//        mDAO = db.listDao();
+        queue = Volley.newRequestQueue(this);
+        Intent intent = getIntent();
+        String search = intent.getStringExtra("search");
+        search=search.trim();
+        String JSON_URL=URL+search+"&appid=1";
 
-
+        Toast.makeText(this, search, Toast.LENGTH_LONG).show();
 
         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
-        Button btn3=findViewById(R.id.MyList);
+        Button btn3 = findViewById(R.id.MyList);
         btn3.setOnClickListener(clk -> {
             Intent i = new Intent(MainActivity.this, LoginMyList.class);
 
             startActivity(i);
         });
-    }
-
-    private void jsonrequest() {
-
-        request = new JsonArrayRequest(JSON_URL, new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
-
-                JSONObject jsonObject =null;
-
-//
-                for (int i = 0; i < response.length(); i++) {
-
-
-                    try {
-                        jsonObject = response.getJSONObject(i) ;
-                        ListEntry addNew = new ListEntry() ;
-
-                        addNew.setName(jsonObject.getString("name"));
-
-                        addNew.setCategory(jsonObject.getString("categorie"));
-                        addNew.setOther(jsonObject.getString("episode"));
-
-                        newEntry.add(addNew);
-
-
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-
-                }
-
-                setuprecyclerview(newEntry);
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-            }
+        Button btn4 = findViewById(R.id.more);
+        btn4.setOnClickListener(clk -> {
+            Intent i = new Intent(MainActivity.this, MainActivity2.class);
+            startActivity(i);
         });
+        try {
+                //this goes in the button click handler:
+                JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, JSON_URL, null,
+                        (response) -> {
+                            try {
+                                ListEntry addNew = new ListEntry(" "," "," ");
+                                try {
+                                    JSONArray drinksArray = response.getJSONArray("drinks");
+
+                                    for (int i = 0; i < drinksArray.length(); i++) {
+
+                                        JSONObject cocktailJson = drinksArray.getJSONObject(i);
 
 
-        requestQueue = Volley.newRequestQueue(MainActivity.this);
-        requestQueue.add(request) ;
+                                        addNew.setName(cocktailJson.getString("strDrink"));
+                                        addNew.setCategory(cocktailJson.getString("strCategory"));
+                                        addNew.setOther(cocktailJson.getString("strTags"));
+
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                newEntry.add(addNew);
+                                setuprecyclerview(newEntry);
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        },
+                        (error) -> {
+                            Log.e("TAG", "error");
+                        });
+                queue.add(request);
 
 
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
+
+
 
     private void setuprecyclerview(List<ListEntry> lstAnime) {
 

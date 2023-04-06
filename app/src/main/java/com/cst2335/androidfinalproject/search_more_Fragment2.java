@@ -1,4 +1,4 @@
-package com.cst2335.androidfinalproject.ui.login;
+package com.cst2335.androidfinalproject;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -17,15 +17,15 @@ import com.cst2335.androidfinalproject.MainActivity;
 import com.cst2335.androidfinalproject.MyListFromDB;
 import com.cst2335.androidfinalproject.R;
 
-public class searchFragment extends Fragment {
+public class search_more_Fragment2 extends Fragment {
 
     private EditText searchText;
 
     private Button btn;
     public static final String SHARED = "sharedPrefs";
-    public String search = "text";
+    public String search2 = "text2";
 
-    public searchFragment() {
+    public search_more_Fragment2() {
         // Required empty public constructor
     }
 
@@ -33,22 +33,23 @@ public class searchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_search, container, false);
+        View view = inflater.inflate(R.layout.fragment_search_more_2, container, false);
 
         searchText = view.findViewById(R.id.username);
 
-        btn = view.findViewById(R.id.login);
+        btn = view.findViewById(R.id.search);
 
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        String name1 = sharedPreferences.getString(search, "");
+        String name1 = sharedPreferences.getString(search2, "");
         searchText.setText(name1);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View v) {
                 String str = searchText.getText().toString();
-                editor.putString(search,str);
+                editor.putString(search2,str);
                 editor.apply();
                 Intent i = new Intent(getActivity(), MainActivity.class);
                 i.putExtra("search",str);

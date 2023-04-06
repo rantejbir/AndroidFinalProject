@@ -13,9 +13,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewid"
-        android:layout_width="385dp"
+        android:layout_width="390dp"
 
-        android:layout_height="657dp"
+        android:layout_height="312dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -36,14 +36,14 @@
         app:layout_constraintTop_toBottomOf="@+id/recyclerviewid" />
 
     <Button
-        android:id="@+id/Help"
+        android:id="@+id/more"
         android:layout_width="164dp"
         android:layout_height="40dp"
         android:layout_marginStart="69dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="7dp"
         android:layout_marginBottom="24dp"
-        android:text="Help"
+        android:text="Search more"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/MyList"
