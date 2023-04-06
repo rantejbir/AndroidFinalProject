@@ -18,6 +18,7 @@ import com.cst2335.androidfinalproject.LoginMyList;
 import com.cst2335.androidfinalproject.MainActivity;
 import com.cst2335.androidfinalproject.MyListFromDB;
 import com.cst2335.androidfinalproject.R;
+import com.cst2335.androidfinalproject.registerFragment;
 import com.google.android.material.snackbar.Snackbar;
 
 public class LoginFragment extends Fragment {
@@ -65,6 +66,12 @@ public class LoginFragment extends Fragment {
 
                     int toast_login;
                     Toast.makeText(getActivity(), R.string.loginNo, Toast.LENGTH_LONG).show();
+                    registerFragment Fragment1 = new registerFragment();
+
+                    getActivity().getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.fragment_container, Fragment1)
+                            .commit();
+
 
                 }
 
