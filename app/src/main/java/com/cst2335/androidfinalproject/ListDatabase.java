@@ -5,8 +5,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.cst2335.androidfinalproject.ListDao;
-import com.cst2335.androidfinalproject.ListEntry;
+
 
 @Database(entities = {ListEntry.class},version = 1)
 public abstract class ListDatabase extends RoomDatabase {

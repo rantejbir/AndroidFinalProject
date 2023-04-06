@@ -29,7 +29,7 @@
             android:name=".MyListView"
             android:exported="true" />
         <activity
-            android:name=".ListOfAllEntries"
+            android:name=".SingleEntryfromSearch"
             android:exported="false" />
         <activity
             android:name=".MyListFromDB"

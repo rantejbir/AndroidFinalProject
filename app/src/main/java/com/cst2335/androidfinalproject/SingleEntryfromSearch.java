@@ -14,7 +14,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 
-public class ListOfAllEntries extends AppCompatActivity {
+public class SingleEntryfromSearch extends AppCompatActivity {
     String name=" ";
     String category=" ";
     String others=" ";
@@ -65,7 +65,7 @@ public class ListOfAllEntries extends AppCompatActivity {
         // set image using Glide
         Button btn=findViewById(R.id.button);
         btn.setOnClickListener(clk -> {
-            AlertDialog.Builder builder = new AlertDialog.Builder(ListOfAllEntries.this);
+            AlertDialog.Builder builder = new AlertDialog.Builder(SingleEntryfromSearch.this);
             builder.setMessage("Do you want to Add the item to your List: " + n.getName())
                     .setTitle(R.string.popup)
                     .setNegativeButton(R.string.no, (dialog, cl) -> {
@@ -80,7 +80,7 @@ public class ListOfAllEntries extends AppCompatActivity {
                         }).start();
 
 //                        Toast.makeText(this, R.string.toast_message, Toast.LENGTH_LONG).show();
-                        Intent i = new Intent(ListOfAllEntries.this, MyListFromDB.class);
+                        Intent i = new Intent(SingleEntryfromSearch.this, MyListFromDB.class);
                         i.putExtra("AddYes","yes");
                         startActivity(i);
                     })

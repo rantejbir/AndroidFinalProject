@@ -14,4 +14,7 @@
     <string name="Category">Category</string>
     <string name="instruction">Instructions</string>
     <string name="AddTheDrink">Add Drink</string>
+    <string name="searchAny">Search For Drink Here</string>
+    <string name="help_toast">Help Fragment</string>
+    <string name="Cocktail">Welcome to Cocktail App</string>
 </resources>

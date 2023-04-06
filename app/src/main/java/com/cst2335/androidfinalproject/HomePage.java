@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,15 +18,11 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        BlankFragment homeFragment = new BlankFragment();
+        HomePageImageFragment homeFragment = new HomePageImageFragment();
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, homeFragment)
                 .commit();
-        View rootView = findViewById(android.R.id.content);
-
-// Create a Snackbar object
-        Snackbar snackbar = Snackbar.make(rootView, "Hello, Snackbar!", Snackbar.LENGTH_LONG);
-
+        Toast.makeText(this, R.string.Cocktail, Toast.LENGTH_LONG).show();
 
 
         ImageButton btn=findViewById(R.id.helpButton);
@@ -35,6 +32,8 @@ public class HomePage extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, homeFragment1)
                     .commit();
+            Toast.makeText(this, R.string.help_toast, Toast.LENGTH_LONG).show();
+
         });
         ImageButton btn2=findViewById(R.id.searchButton);
         btn2.setOnClickListener(clk -> {
@@ -43,6 +42,8 @@ public class HomePage extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container, homeFragment2)
                     .commit();
+            Toast.makeText(this, R.string.searchAny, Toast.LENGTH_LONG).show();
+
         });
         ImageButton btn3=findViewById(R.id.allList);
         btn3.setOnClickListener(clk -> {
