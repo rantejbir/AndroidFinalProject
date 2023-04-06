@@ -14,8 +14,6 @@ import android.widget.EditText;
 import androidx.fragment.app.Fragment;
 
 import com.cst2335.androidfinalproject.MainActivity;
-import com.cst2335.androidfinalproject.MyListFromDB;
-import com.cst2335.androidfinalproject.R;
 
 public class search_more_Fragment2 extends Fragment {
 
