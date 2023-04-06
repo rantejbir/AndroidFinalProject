@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         @SuppressLint({"MissingInflatedId", "LocalSuppress"})
         Button btn3 = findViewById(R.id.MyList);
         btn3.setOnClickListener(clk -> {
-            Intent i = new Intent(MainActivity.this, LoginMyList.class);
+            Intent i = new Intent(MainActivity.this, HomePage.class);
 
             startActivity(i);
         });

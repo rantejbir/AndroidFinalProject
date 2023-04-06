@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -78,7 +79,10 @@ public class ListOfAllEntries extends AppCompatActivity {
                             }
                         }).start();
 
-                        Toast.makeText(this, R.string.toast_message, Toast.LENGTH_LONG).show();
+//                        Toast.makeText(this, R.string.toast_message, Toast.LENGTH_LONG).show();
+                        Intent i = new Intent(ListOfAllEntries.this, MyListFromDB.class);
+                        i.putExtra("AddYes","yes");
+                        startActivity(i);
                     })
                     .create().show();
 

@@ -55,6 +55,9 @@ public class MyListFromDB extends AppCompatActivity {
             if(n.equals("yes")){
                 Toast.makeText(this, R.string.toast_message_del_yes, Toast.LENGTH_LONG).show();
             }
+        }else if((ini.getStringExtra("AddYes"))!=null){
+            Toast.makeText(this, R.string.toast_message, Toast.LENGTH_LONG).show();
+
         }
 
 

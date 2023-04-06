@@ -13,9 +13,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerviewid"
-        android:layout_width="390dp"
+        android:layout_width="402dp"
 
-        android:layout_height="312dp"
+        android:layout_height="612dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -30,7 +30,7 @@
         android:layout_marginStart="7dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="24dp"
-        android:text="My List"
+        android:text="Home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerviewid" />
@@ -43,7 +43,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="7dp"
         android:layout_marginBottom="24dp"
-        android:text="Search more"
+        android:text="more"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/MyList"
