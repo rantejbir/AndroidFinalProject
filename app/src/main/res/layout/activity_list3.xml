@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cst2335.androidfinalproject.MainActivity"
+    android:background="#303030">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout_id"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingtoolbar_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:title="Title">
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Light"
+                app:layout_collapseMode="pin"></androidx.appcompat.widget.Toolbar>
+
+
+            <LinearLayout
+                android:layout_width="345dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="50dp">
+
+
+
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/loading"
+                    app:srcCompat="@mipmap/img_2" />
+
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="130dp"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/aa_anime_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" "
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/aa_categorie"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Category" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="410dp"
+        android:layout_height="61dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="92dp"
+        android:text="Delete from List"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/aa_rating"
+        android:layout_width="352dp"
+        android:layout_height="218dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="9dp"
+        android:text="TextView"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbarlayout_id" />
+
+    <!--    <EditText-->
+    <!--        android:id="@+id/aa_description"-->
+    <!--        android:layout_width="340dp"-->
+    <!--        android:layout_height="347dp"-->
+    <!--        android:ems="10"-->
+    <!--        android:inputType="textPersonName"-->
+    <!--        android:text="Name"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/appbarlayout_id"-->
+    <!--        app:layout_constraintVertical_bias="0.187"-->
+    <!--        tools:layout_editor_absoluteX="31dp" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
