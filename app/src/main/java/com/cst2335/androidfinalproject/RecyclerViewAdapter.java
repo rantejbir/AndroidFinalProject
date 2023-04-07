@@ -30,7 +30,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.mContext = mContext;
         this.mData = mData;
 
-        // Request option for Glide
+
         option = new RequestOptions().centerCrop().placeholder(R.drawable.loading).error(R.drawable.loading);
 
     }
@@ -63,7 +63,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         holder.name.setText(mData.get(position).getName());
-        holder.category.setText(mData.get(position).getOther());
+
         holder.category.setText(mData.get(position).getCategory());
 
 
@@ -90,7 +90,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             super(itemView);
 //
             view_container = itemView.findViewById(R.id.container);
-            name = itemView.findViewById(R.id.anime_name);
+            name = itemView.findViewById(R.id.name);
             category = itemView.findViewById(R.id.categorie);
             others = itemView.findViewById(R.id.aa_rating);
 

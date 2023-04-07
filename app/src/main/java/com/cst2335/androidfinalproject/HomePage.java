@@ -19,6 +19,7 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_main3);
 
         HomePageImageFragment homeFragment = new HomePageImageFragment();
+
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, homeFragment)
                 .commit();
@@ -35,6 +36,9 @@ public class HomePage extends AppCompatActivity {
             Toast.makeText(this, R.string.help_toast, Toast.LENGTH_LONG).show();
 
         });
+
+
+
         ImageButton btn2=findViewById(R.id.searchButton);
         btn2.setOnClickListener(clk -> {
             searchFragment homeFragment2 = new searchFragment();
@@ -45,8 +49,13 @@ public class HomePage extends AppCompatActivity {
             Toast.makeText(this, R.string.searchAny, Toast.LENGTH_LONG).show();
 
         });
+
+
+
+
         ImageButton btn3=findViewById(R.id.allList);
         btn3.setOnClickListener(clk -> {
+
             Intent i = new Intent(HomePage.this, LoginMyList.class);
             startActivity(i);
         });
