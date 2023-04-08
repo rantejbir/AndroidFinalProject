@@ -16,10 +16,20 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 /**
+ * Author: Daksh Sharma
+ * Date updated: 8/4/2023
+ * purpose: This class represents a user registration process for an application.
+ * This class's function is to manage the register screen's UI and keep track of the user's registration data.
+ * The class has a button to start the registration process as well as two EditTexts where the user may input their email and password.
+ * To make it accessible later in the program, the registration data is saved in shared preferences.
+ */
+
+/**
  * A simple {@link Fragment} subclass.
  * Use the {@link registerFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class registerFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match

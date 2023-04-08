@@ -34,9 +34,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-
+/**
+ * Author: Daksh Sharma
+ * Date updated: 8/4/2023
+ * purpose: With the help of the Volley library, this class aims to provide a user interface for a primary
+ * activity that presents a list of items that were obtained from an API request.
+ */
 public class MainActivity extends AppCompatActivity {
-
+    /**
+     * The code then gets a search phrase from the previous activity that was supplied as an extra
+     * in the intent and uses it to create a URL for an API call. The user can see the search word
+     * by seeing a Toast.
+     *
+     * There are two separate buttons set up with two click listeners each:
+     *
+     * When the "MyList" button is pressed, a new activity titled "HomePage" is launched.
+     * When the "more" button is clicked, a new activity titled "MainActivity2" is shown.
+     */
     String URL="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
     private JsonArrayRequest request ;
@@ -52,9 +66,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Toolbar toolbar=findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-
         newEntry = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerviewid);
         queue = Volley.newRequestQueue(this);
@@ -116,7 +127,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * he "setuprecyclerview" method sets up the RecyclerView with a new instance of the "RecyclerViewAdapter" class,
+     * passing in the "newEntry" ArrayList and the current activity. It also sets the RecyclerView's layout manager and adapter.
+     * @param lstAnime
+     */
 
     private void setuprecyclerview(List<ListEntry> lstAnime) {
 

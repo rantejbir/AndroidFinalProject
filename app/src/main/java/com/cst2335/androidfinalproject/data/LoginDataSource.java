@@ -5,7 +5,11 @@ import com.cst2335.androidfinalproject.data.model.LoggedInUser;
 import java.io.IOException;
 
 /**
- * Class that handles authentication w/ login credentials and retrieves user information.
+ * Author:Daksh Sharma
+ * Date updated: 8/4/2023
+ * purpose:The LoginDataSource class's main function is to offer a method for authenticating users and returning
+ * a LoggedInUser object to do so. The login method
+ * uses the user's username and password as input parameters and makes an attempt to verify their identity.
  */
 public class LoginDataSource {
 

@@ -13,16 +13,22 @@ import android.widget.Toast;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 
-
+/**
+ * Author: Daksh Sharma
+ * Date updated: 8/4/2023
+ * purpose: This class represents a function that allows a user to view a single entry's information and
+ * add it to their list. This class's function is to manage
+ * the screen's UI and communicate with the underlying database so that a user may be added to the list.
+ */
 public class SingleEntryfromSearch extends AppCompatActivity {
-    String name=" ";
-    String category=" ";
-    String others=" ";
+    String name = " ";
+    String category = " ";
+    String others = " ";
     ListDao mDAO;
 
 
+    ListEntry n = new ListEntry();
 
-    ListEntry n=new ListEntry();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +41,6 @@ public class SingleEntryfromSearch extends AppCompatActivity {
         name = getIntent().getExtras().getString("name");
         category = getIntent().getExtras().getString("category");
         others = getIntent().getExtras().getString("others");
-
-
 
 
         @SuppressLint("WrongViewCast")
@@ -61,9 +65,9 @@ public class SingleEntryfromSearch extends AppCompatActivity {
         RequestOptions requestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.loading).error(R.drawable.loading);
 
 
-        n = new ListEntry(name,category,others);
+        n = new ListEntry(name, category, others);
         // set image using Glide
-        Button btn=findViewById(R.id.button);
+        Button btn = findViewById(R.id.button);
         btn.setOnClickListener(clk -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(SingleEntryfromSearch.this);
             builder.setMessage("Do you want to Add the item to your List: " + n.getName())
@@ -81,13 +85,12 @@ public class SingleEntryfromSearch extends AppCompatActivity {
 
 //                        Toast.makeText(this, R.string.toast_message, Toast.LENGTH_LONG).show();
                         Intent i = new Intent(SingleEntryfromSearch.this, MyListFromDB.class);
-                        i.putExtra("AddYes","yes");
+                        i.putExtra("AddYes", "yes");
                         startActivity(i);
                     })
                     .create().show();
 
         });
-
 
 
     }
