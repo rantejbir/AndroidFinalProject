@@ -14,12 +14,8 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
-import com.cst2335.androidfinalproject.LoginMyList;
-import com.cst2335.androidfinalproject.MainActivity;
-import com.cst2335.androidfinalproject.MyListFromDB;
 import com.cst2335.androidfinalproject.R;
 import com.cst2335.androidfinalproject.registerFragment;
-import com.google.android.material.snackbar.Snackbar;
 
 public class LoginFragment extends Fragment {
 
@@ -43,7 +39,6 @@ public class LoginFragment extends Fragment {
         emailEditText = view.findViewById(R.id.emailEditText);
         passwordEditText = view.findViewById(R.id.passwordEditText);
         loginButton = view.findViewById(R.id.loginButton);
-
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         String usern = sharedPreferences.getString(user, "");
