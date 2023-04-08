@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModel;
 import android.util.Patterns;
 
 import com.cst2335.androidfinalproject.data.LoginRepository;
-import com.cst2335.androidfinalproject.data.Result;
-import com.cst2335.androidfinalproject.data.model.LoggedInUser;
+import com.cst2335.androidfinalproject.data.resultModel;
+import com.cst2335.androidfinalproject.data.model.LogInUser;
 import com.cst2335.androidfinalproject.R;
 
 public class LoginViewModel extends ViewModel {
@@ -31,10 +31,10 @@ public class LoginViewModel extends ViewModel {
 
     public void login(String username, String password) {
         // can be launched in a separate asynchronous job
-        Result<LoggedInUser> result = loginRepository.login(username, password);
+        resultModel<LogInUser> resultModel = loginRepository.login(username, password);
 
-        if (result instanceof Result.Success) {
-            LoggedInUser data = ((Result.Success<LoggedInUser>) result).getData();
+        if (resultModel instanceof resultModel.Success) {
+            LogInUser data = ((resultModel.Success<LogInUser>) resultModel).getData();
             loginResult.setValue(new LoginResult(new LoggedInUserView(data.getDisplayName())));
         } else {
             loginResult.setValue(new LoginResult(R.string.login_failed));

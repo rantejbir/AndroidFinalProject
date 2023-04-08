@@ -1,6 +1,6 @@
 package com.cst2335.androidfinalproject.data;
 
-import com.cst2335.androidfinalproject.data.model.LoggedInUser;
+import com.cst2335.androidfinalproject.data.model.LogInUser;
 
 /**
  * Class that requests authentication and user information from the remote data source and
@@ -14,7 +14,7 @@ public class LoginRepository {
 
     // If user credentials will be cached in local storage, it is recommended it be encrypted
     // @see https://developer.android.com/training/articles/keystore
-    private LoggedInUser user = null;
+    private LogInUser user = null;
 
     // private constructor : singleton access
     private LoginRepository(LoginDataSource dataSource) {
@@ -37,18 +37,18 @@ public class LoginRepository {
         dataSource.logout();
     }
 
-    private void setLoggedInUser(LoggedInUser user) {
+    private void setLoggedInUser(LogInUser user) {
         this.user = user;
         // If user credentials will be cached in local storage, it is recommended it be encrypted
         // @see https://developer.android.com/training/articles/keystore
     }
 
-    public Result<LoggedInUser> login(String username, String password) {
+    public resultModel<LogInUser> login(String username, String password) {
         // handle login
-        Result<LoggedInUser> result = dataSource.login(username, password);
-        if (result instanceof Result.Success) {
-            setLoggedInUser(((Result.Success<LoggedInUser>) result).getData());
+        resultModel<LogInUser> resultModel = dataSource.login(username, password);
+        if (resultModel instanceof resultModel.Success) {
+            setLoggedInUser(((resultModel.Success<LogInUser>) resultModel).getData());
         }
-        return result;
+        return resultModel;
     }
 }

@@ -1,6 +1,6 @@
 package com.cst2335.androidfinalproject.data;
 
-import com.cst2335.androidfinalproject.data.model.LoggedInUser;
+import com.cst2335.androidfinalproject.data.model.LogInUser;
 
 import java.io.IOException;
 
@@ -8,22 +8,22 @@ import java.io.IOException;
  * Author:Daksh Sharma
  * Date updated: 8/4/2023
  * purpose:The LoginDataSource class's main function is to offer a method for authenticating users and returning
- * a LoggedInUser object to do so. The login method
+ * a LogInUser object to do so. The login method
  * uses the user's username and password as input parameters and makes an attempt to verify their identity.
  */
 public class LoginDataSource {
 
-    public Result<LoggedInUser> login(String username, String password) {
+    public resultModel<LogInUser> login(String username, String password) {
 
         try {
             // TODO: handle loggedInUser authentication
-            LoggedInUser fakeUser =
-                    new LoggedInUser(
+            LogInUser fakeUser =
+                    new LogInUser(
                             java.util.UUID.randomUUID().toString(),
                             "Jane Doe");
-            return new Result.Success<>(fakeUser);
+            return new resultModel.Success<>(fakeUser);
         } catch (Exception e) {
-            return new Result.Error(new IOException("Error logging in", e));
+            return new resultModel.Error(new IOException("Error logging in", e));
         }
     }
 
