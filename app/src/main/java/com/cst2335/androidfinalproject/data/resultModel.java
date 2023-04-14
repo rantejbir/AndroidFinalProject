@@ -26,7 +26,7 @@ public class resultModel <T> {
     }
 
 
-    // Error sub-class
+
     static class Error extends resultModel {
         private Exception error;
 

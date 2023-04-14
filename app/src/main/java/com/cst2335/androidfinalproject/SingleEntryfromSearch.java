@@ -47,12 +47,10 @@ public class SingleEntryfromSearch extends AppCompatActivity {
         CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsingtoolbar_id);
         collapsingToolbarLayout.setTitleEnabled(true);
 
-        TextView tv_name = findViewById(R.id.aa_anime_name);
+        TextView tv_name = findViewById(R.id.aa_name);
         TextView tv_categorie = findViewById(R.id.aa_categorie);
         TextView tv_rating = findViewById(R.id.aa_rating);
 
-
-        // setting values to each view
 
         tv_name.setText(name);
         tv_categorie.setText(category);

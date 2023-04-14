@@ -56,7 +56,7 @@
 
 
                     <TextView
-                        android:id="@+id/aa_anime_name"
+                        android:id="@+id/aa_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=" "
@@ -106,18 +106,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appbarlayout_id" />
-
-    <!--    <EditText-->
-    <!--        android:id="@+id/aa_description"-->
-    <!--        android:layout_width="340dp"-->
-    <!--        android:layout_height="347dp"-->
-    <!--        android:ems="10"-->
-    <!--        android:inputType="textPersonName"-->
-    <!--        android:text="Name"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/appbarlayout_id"-->
-    <!--        app:layout_constraintVertical_bias="0.187"-->
-    <!--        tools:layout_editor_absoluteX="31dp" />-->
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
