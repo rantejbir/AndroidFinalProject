@@ -62,7 +62,7 @@ public class LoginFragment extends Fragment {
 
 
                     int toast_login;
-                    Toast.makeText(getActivity(), R.string.loginNo, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), R.string.login_main, Toast.LENGTH_LONG).show();
                     registerFragment Fragment1 = new registerFragment();
 
                     getActivity().getSupportFragmentManager().beginTransaction()

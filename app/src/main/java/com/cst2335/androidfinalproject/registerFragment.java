@@ -93,7 +93,7 @@ public class registerFragment extends Fragment {
                 Intent i = new Intent(getActivity(), MyListFromDB.class);
 
                 startActivity(i);
-                Toast.makeText(getActivity(), R.string.Register, Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), R.string.register_main, Toast.LENGTH_LONG).show();
 
             }
         });
