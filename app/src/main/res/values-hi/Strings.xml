@@ -17,4 +17,6 @@
     <string name="searchAny">Search For Drink Here</string>
     <string name="help_toast">Help Fragment</string>
     <string name="Cocktail">Welcome to Cocktail App</string>
+    <string name="home_main">Home</string>
+    <string name="more_main">more</string>
 </resources>
