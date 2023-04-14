@@ -28,10 +28,12 @@
     <string name="instruction">Instructions</string>
     <string name="AddTheDrink">Add Drink</string>
     <string name="loginNo">Login Not SuccessFull</string>
-    <string name="Register">Registered Successfully</string>
+    <string name="Register">You are Registered Successfully</string>
     <string name="searchAny">Search For Drink Here</string>
     <string name="help_toast">Help Fragment</string>
     <string name="Cocktail">Welcome to Cocktail App</string>
+    <string name="LoginTitle">Login into the Cocktail app</string>
+    <string name="registerTitle">Register here first</string>
 
 
 </resources>

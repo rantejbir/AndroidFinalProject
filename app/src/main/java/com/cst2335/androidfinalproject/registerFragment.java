@@ -24,26 +24,17 @@ import android.widget.Toast;
  * To make it accessible later in the program, the registration data is saved in shared preferences.
  */
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link registerFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 
 public class registerFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private String Parameter1;
+    private String Parameter2;
     private EditText emailEditText;
     private EditText passwordEditText;
     private Button loginButton;
-    public static final String SHARED = "sharedPrefs";
+    public static final String SharedPreferences = "sharedPrefs";
     public String user = "user";
     public String pass = "pass";
 
@@ -51,30 +42,22 @@ public class registerFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment registerFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static registerFragment newInstance(String param1, String param2) {
-        registerFragment fragment = new registerFragment();
+
+    public static registerFragment newInstance(String para1, String para2) {
+        registerFragment registerFrag = new registerFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+        args.putString(ARG_PARAM1, para1);
+        args.putString(ARG_PARAM2, para2);
+        registerFrag.setArguments(args);
+        return registerFrag;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            Parameter1 = getArguments().getString(ARG_PARAM1);
+            Parameter2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -82,14 +65,14 @@ public class registerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_register, container, false);
+        View view = inflater.inflate(R.layout.register_fragment, container, false);
 
         emailEditText = view.findViewById(R.id.emailEditText1);
         passwordEditText = view.findViewById(R.id.passwordEditText1);
         loginButton = view.findViewById(R.id.loginButton);
 
 
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SHARED, MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences(SharedPreferences, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         String usern = sharedPreferences.getString(user, "");
         String passn = sharedPreferences.getString(pass, "");
@@ -101,11 +84,11 @@ public class registerFragment extends Fragment {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = emailEditText.getText().toString();
-                String password = passwordEditText.getText().toString();
+                String emailClick = emailEditText.getText().toString();
+                String passClick = passwordEditText.getText().toString();
 
-                editor.putString(user,email);
-                editor.putString(pass,password);
+                editor.putString(user,emailClick);
+                editor.putString(pass,passClick);
                 editor.apply();
                 Intent i = new Intent(getActivity(), MyListFromDB.class);
 

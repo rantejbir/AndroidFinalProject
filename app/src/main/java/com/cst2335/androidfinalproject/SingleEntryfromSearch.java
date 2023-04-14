@@ -51,19 +51,14 @@ public class SingleEntryfromSearch extends AppCompatActivity {
         TextView tv_categorie = findViewById(R.id.aa_categorie);
         TextView tv_rating = findViewById(R.id.aa_rating);
 
-
-        // setting values to each view
-
         tv_name.setText(name);
         tv_categorie.setText(category);
         tv_rating.setText(others);
-
 
         collapsingToolbarLayout.setTitle(name);
 
 
         RequestOptions requestOptions = new RequestOptions().centerCrop().placeholder(R.drawable.loading).error(R.drawable.loading);
-
 
         n = new ListEntry(name, category, others);
         // set image using Glide
@@ -83,7 +78,6 @@ public class SingleEntryfromSearch extends AppCompatActivity {
                             }
                         }).start();
 
-//                        Toast.makeText(this, R.string.toast_message, Toast.LENGTH_LONG).show();
                         Intent i = new Intent(SingleEntryfromSearch.this, MyListFromDB.class);
                         i.putExtra("AddYes", "yes");
                         startActivity(i);
