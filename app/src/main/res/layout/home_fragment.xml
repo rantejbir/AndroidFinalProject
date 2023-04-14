@@ -8,7 +8,7 @@
     <TextView
         android:layout_width="397dp"
         android:layout_height="272dp"
-        android:text="AI technologies such as machine learning, natural language processing, and computer vision are being used in a variety of industries to automate processes and enhance decision-making capabilities."
+        android:text=""
         android:textSize="24sp"
         android:textStyle="bold" />
 
