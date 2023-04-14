@@ -17,13 +17,4 @@
     <string name="searchAny">Search For Drink Here</string>
     <string name="help_toast">Help Fragment</string>
     <string name="Cocktail">Welcome to Cocktail App</string>
-
-
-    <string name="Register">आप सफलतापूर्वक पंजीकृत हैं</string>
-    <string name="LoginTitle">कॉकटेल ऐप में लॉग इन करें</string>
-    <string name="registerTitle">यहां पहले रजिस्टर करें</string>
-    <string name="activity_list_title">ऐप</string>
-    <string name="activity_list_cat">रजिस्टर</string>
-    <string name="add_to_list">सफलतापूर्वक</string>
-    <string name="Del_from_list">सूची से हटाएं</string>
 </resources>
