@@ -6,13 +6,13 @@ package com.cst2335.androidfinalproject.data.model;
  * purpose:A user who has successfully logged into the programme is represented by the class LoggedInUser. When a new LoggedInUser object is created, its two private properties, userId and displayName. A user's userId field serves
  * as a distinctive identification, while the displayName field serves as a name that may be seen by other users.
  */
-public class LoggedInUser {
+public class LogInUser {
 
     private String userId;
     private String displayName;
 
 
-    public LoggedInUser(String userId, String displayName) {
+    public LogInUser(String userId, String displayName) {
         this.userId = userId;
         this.displayName = displayName;
     }
