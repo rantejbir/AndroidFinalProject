@@ -14,17 +14,10 @@ import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
+import com.cst2335.androidfinalproject.MyListFromDB;
 import com.cst2335.androidfinalproject.R;
 import com.cst2335.androidfinalproject.registerFragment;
-/**
- * Author: Daksh Sharma
- * Date updated: 8/4/2023
- * purpose: The login feature for the app is to be implemented as part of this class. It is a fragment that shows
- * a login form with two EditText boxes for entering a password and an email address, as well as a Button to start the login process.
- * In order to establish if the login was successful or not, it additionally fetches the user credentials from SharedPreferences and compares them with the values entered.
- * The MyListFromDB activity is launched if the login is successful. The user is given the opportunity to register if they do not already have an account by replacing the
- * current fragment with the registerFragment and displaying a toast notification if the login attempt fails.
- */
+
 public class LoginFragment extends Fragment {
 
     private EditText emailEditText;
