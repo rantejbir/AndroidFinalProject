@@ -8,7 +8,9 @@ import androidx.room.RoomDatabase;
 /**
  * The @Database annotation specifies the name of the database and the entities (tables) that are present in it. In this instance, a list item is represented by a single entity, called ListEntry.
  *
- * The class has a ListDao object for accessing the database and a static variable for the database name. If an instance of the database already exists, the getInstance() method returns that instance instead of creating a new one. The function sets some settings, including the context, the database class, and the database name, before using the databaseBuilder() method to construct a database instance. When the version number changes, the fallbackToDestructiveMigration()
+ * The class has a ListDao object for accessing the database and a static variable for the database name. If an instance of the database already exists, the getInstance() method
+ * returns that instance instead of creating a new one. The function sets some settings, including the context, the database class, and the database name, before using the databaseBuilder()
+ * method to construct a database instance. When the version number changes, the fallbackToDestructiveMigration()
  * function is used to reconstruct the database. When schema changes are frequent throughout development, this is helpful.
  */
 

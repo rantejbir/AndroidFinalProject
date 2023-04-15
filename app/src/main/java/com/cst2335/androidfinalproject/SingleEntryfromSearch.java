@@ -83,7 +83,7 @@ public class SingleEntryfromSearch extends AppCompatActivity {
                             }
                         }).start();
 
-//                        Toast.makeText(this, R.string.toast_message, Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, R.string.toast_message, Toast.LENGTH_LONG).show();
                         Intent i = new Intent(SingleEntryfromSearch.this, MyListFromDB.class);
                         i.putExtra("AddYes", "yes");
                         startActivity(i);
