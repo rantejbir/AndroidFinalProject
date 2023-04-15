@@ -7,6 +7,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+/**
+ * This Java class represents a straightforward fragment that shows an image on an Android application's home page.
+ * The fragment only has a static image and no logic. It has a default constructor and the initialization parameters for
+ * the fragment are stored in two private string arguments called mParam1 and mParam2. The factory method of the fragment,
+ * newInstance(), produces a fresh instance of the fragment using the supplied inputs. The fragment's onCreate() method retrieves
+ * the arguments that were supplied to it when it was constructed and stores them in the instance variables. Last but not least,
+ * the onCreateView() method expands the fragment's layout to include an ImageView that shows the image on the home page.
+ */
 
 /**
  * A simple {@link Fragment} subclass.
