@@ -14,7 +14,7 @@
     <string name="toast_message_del_no">Item not Deleted</string>
     <string name="toast_message_del_yes">Item deleted from List</string>
     <string name="hel" translatable="false">AI technologies such as machine learning, natural language processing, and computer vision are being used in a variety of industries to automate processes and enhance decision-making capabilities.</string>
-
+    <!-- Strings related to login -->
     <string name="prompt_email">Search...🔍</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Search</string>
