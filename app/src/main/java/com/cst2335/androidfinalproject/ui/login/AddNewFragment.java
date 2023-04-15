@@ -35,6 +35,15 @@ import com.cst2335.androidfinalproject.databinding.FragmentAddNewBinding;
 
 import com.cst2335.androidfinalproject.R;
 
+/**
+ * @author Rantejbir Singh
+ *The layout for the fragment is inflated and the root view for the layout is returned using the onCreateView() method. When the fragment's view hierarchy is formed, the onViewCreated() method
+ * is invoked, which is then used to configure the user interface's elements and manage user interactions.
+ *
+ * A LoginViewModel object and a ListDao object that are used to communicate with the SQLite database are both generated in this class. Data
+ * is stored and retrieved using the SharedPreferences object, and certain string constants are provided to denote the data contained in the
+ * shared preferences.
+ */
 public class AddNewFragment extends Fragment {
 
     private LoginViewModel loginViewModel;
@@ -56,6 +65,16 @@ public class AddNewFragment extends Fragment {
 
     }
 
+    /**
+     * The user interface elements are initialised and provided functionality in the onViewCreated() method.
+     * The text entered in the text fields is saved in shared preferences when the login button is clicked, and a new ListEntry object
+     * is created with the entered data. The user is presented with an alert dialogue that asks if they wish to add the item to the list.
+     * The ListDao object is used to insert the
+     * item into the database if the user selects "Yes," and a new Intent is created to start a new activity named MyListFromDB.
+     * @param view The View returned by {@link #onCreateView(LayoutInflater, ViewGroup, Bundle)}.
+     * @param savedInstanceState If non-null, this fragment is being re-constructed
+     * from a previous saved state as given here.
+     */
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);

@@ -6,6 +6,10 @@ import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
+
+/**
+ * @author Rantejbir Singh
+ */
 @Dao
 public interface ListDao {
     @Insert

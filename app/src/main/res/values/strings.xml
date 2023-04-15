@@ -1,21 +1,21 @@
 <resources>
-    <string name="app_name">add_activity</string>
+    <string name="app_name">CockTails</string>
     <string name="Drink">Enter the Drink</string>
     <string name="ingredients">Enter the ingredients</string>
     <string name="add">Add</string>
     <string name="cancel">Cancel</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="popup">question:</string>
     <string name="no">no</string>
     <string name="yes">yes</string>
-    <string name="toast_message">Item Added SuccessFully</string>
-    <string name="toast_message2">Item not added</string>
+    <string name="toast_message" translatable="false">Item Added SuccessFully</string>
+    <string name="toast_message2" translatable="false">Item not added</string>
     <string name="toast_message_del_no">Item not Deleted</string>
     <string name="toast_message_del_yes">Item deleted from List</string>
     <string name="hel" translatable="false">AI technologies such as machine learning, natural language processing, and computer vision are being used in a variety of industries to automate processes and enhance decision-making capabilities.</string>
-
-    <string name="prompt_email">Search...🔍</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email" translatable="false">Search...🔍</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Search</string>
     <string name="action_sign_in_short">Sign in</string>
@@ -23,14 +23,15 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
-    <string name="home_main">Home</string>
+    <string name="NameDrink">Name Of Drink</string>
+    <string name="Category">Category</string>
+    <string name="instruction">Instructions</string>
+    <string name="AddTheDrink">Add Drink</string>
+    <string name="loginNo">Login Not SuccessFull</string>
+    <string name="Register">Registered Successfully</string>
+    <string name="searchAny">Search For Drink Here</string>
+    <string name="help_toast">Help Fragment</string>
+    <string name="Cocktail">Welcome to Cocktail App</string>
 
-    <string name="activity_list_title">Title</string>
-    <string name="activity_list_cat">Category</string>
-    <string name="more_main">more</string>
-    <string name="login_main">Login</string>
-    <string name="register_main">register</string>
-    <string name="email">email</string>
-    <string name="password">Password</string>
 
 </resources>
