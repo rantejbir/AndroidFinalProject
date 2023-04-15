@@ -32,6 +32,17 @@
     <string name="searchAny">Search For Drink Here</string>
     <string name="help_toast">Help Fragment</string>
     <string name="Cocktail">Welcome to Cocktail App</string>
+    <string name="del_list">Delete from List</string>
+    <string name="description">Group Project:
+
+        This is our final project of our android, with the cocktail database. In this project we are fetching the data from the URL of the website to our program and then, adding and deleting them from our database.
+
+
+
+
+
+
+    Team member: Samarth, Rantejbir and Daksh</string>
 
 
 </resources>

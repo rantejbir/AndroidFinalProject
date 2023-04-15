@@ -14,7 +14,15 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import java.util.List;
 
-
+/**
+ * @author Rantejbir Singh
+ * Using Room, an Android library for working with databases, the activity obtains the item's data from a SQLite database.
+ * A DAO (Data Access Object) called ListDao is used to access the database. By using ListDatabase to obtain an instance of the database,
+ * the activity creates the DAO.getInstance(this).
+ *
+ * The activity creates the UI components by using findViewById() to locate the pertinent views in the layout XML file, and then setting their text values with the item data. Additionally, it uses CollapsingToolbarLayout.setTitle() to set the title of the app bar. When a user clicks the delete button, a warning dialogue appears asking them to confirm that they really do want to delete the item.
+ * If the user agrees to the deletion, ListDao is used to remove the item from the database.DeleteEntry(),
+ */
 public class MyListView extends AppCompatActivity {
     String name=" ";
     String category=" ";

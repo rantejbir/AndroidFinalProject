@@ -34,7 +34,7 @@
         android:layout_marginStart="261dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="46dp"
-        android:text="search"
+        android:text="@string/action_sign_in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username" />

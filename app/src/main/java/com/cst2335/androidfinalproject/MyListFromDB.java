@@ -13,7 +13,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * @author Rantejbir Singh
+ * The activity builds on the Android framework's AppCompatActivity class.
+ * Set the activity's layout by inflating the activity_main layout file with setContentView(R.layout.activity_main).
+ *
+ * Two buttons are created by the code, and click listeners are attached to them. When a button is clicked, an intent to start
+ * a different activity is established.
+ */
 public class MyListFromDB extends AppCompatActivity {
     private List<ListEntry> newEntry=new ArrayList<>();
     private ListDao mDAO;
@@ -48,6 +55,10 @@ public class MyListFromDB extends AppCompatActivity {
                 newEntry.addAll((mDAO.getAllEntries()));
 
             }
+            /**
+             * Finally, there are a few conditional statements that check whether the user has recently added or deleted an item from the list,
+             * and display a corresponding message using a Toast if necessary.
+             */
         }).start();
         Intent ini=getIntent();
         if((ini.getStringExtra("delOrNo"))!=null){
@@ -66,7 +77,13 @@ public class MyListFromDB extends AppCompatActivity {
         setuprecyclerview(newEntry);
     }
 
-
+    /**
+     * To obtain an instance of the ListDao, use the singleton class known as ListDatabase. The database's whole entry list is then retrieved using the ListDao. To prevent obstructing the main UI thread, this is done in a separate thread.
+     *
+     * The list of entries that was obtained is then sent to the setuprecyclerview() method, which creates a RecyclerView and adds an adapter to it. RecyclerViewAdapter2, a unique adapter that extends the RecyclerView, is the type of adapter
+     * that makes up the adapter.adapter type.
+     * @param lstAnime
+     */
     private void setuprecyclerview(List<ListEntry> lstAnime) {
 
 
