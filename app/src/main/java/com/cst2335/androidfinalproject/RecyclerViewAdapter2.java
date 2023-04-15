@@ -100,7 +100,7 @@ public RecyclerViewAdapter2(){}
             super(itemView);
 //
             view_container = itemView.findViewById(R.id.container);
-            name = itemView.findViewById(R.id.anime_name);
+            name = itemView.findViewById(R.id.name11);
             category = itemView.findViewById(R.id.categorie);
             others = itemView.findViewById(R.id.aa_rating);
 

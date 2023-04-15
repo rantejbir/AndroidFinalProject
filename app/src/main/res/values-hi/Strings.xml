@@ -1,20 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">खोज_गतिविधि</string>
-    <string name="Drink">पेय दर्ज करें</string>
+    <string name="app_name">कॉकटेल</string>
+
+    <string name="NameDrink">पेय का नाम</string>
+    <string name="Category">नाम</string>
+    <string name="instruction">निर्देश</string>
+    <string name="AddTheDrink">पेय जोड़ें</string>
+    <string name="loginNo">लॉग इन सक्सेसफुल नहीं</string>
+    <string name="Register">र्देश इन सक्सेसफुल नहीं</string>
+    <string name="searchAny">पेय के लिए यहां खोजेंe</string>
+    <string name="help_toast">मदद टुकड़ा</string>
+    <string name="Cocktail">कॉकटेल ऐप में आपका स्वागत है</string>
+
+
+
+    <string name="Drink">पेय का नाम</string>
     <string name="ingredients">सामग्री दर्ज करें</string>
-    <string name="add">जोड़ना</string>
-    <string name="cancel">रद्द करना</string>
-    <string name="popup">question:</string>
-    <string name="no">no</string>
-    <string name="yes">yes</string>
-    <string name="toast_message_del_no">Item not Deleted</string>
-    <string name="toast_message_del_yes">Item deleted from List</string>
-    <string name="NameDrink">Name Of Drink</string>
-    <string name="Category">Category</string>
-    <string name="instruction">Instructions</string>
-    <string name="AddTheDrink">Add Drink</string>
-    <string name="searchAny">Search For Drink Here</string>
-    <string name="help_toast">Help Fragment</string>
-    <string name="Cocktail">Welcome to Cocktail App</string>
+    <string name="add">करे</string>
+    <string name="cancel">दर्ज</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">हैलो खाली टुकड़ा</string>
+    <string name="popup">सामग्री:</string>
+    <string name="no">टुकड़ा</string>
+    <string name="yes">हैलो</string>
+    <string name="toast_message">खाली टुकड़</string>
+    <string name="toast_message2">खाली टुकड़</string>
+    <string name="toast_message_del_no">खाली टुकड़</string>
+    <string name="toast_message_del_yes">आइटम सूची से हटाया गया</string>
+    <string name="hel" translatable="false">AI technologies such as machine learning, natural language processing, and computer vision are being used in a variety of industries to automate processes and enhance decision-making capabilities.</string>
+    <string name="description">समूह परियोजना:
+
+        कॉकटेल डेटाबेस के साथ यह हमारे Android का हमारा अंतिम प्रोजेक्ट है। इस प्रोजेक्ट में हम वेबसाइट के URL से अपने प्रोग्राम में डेटा ला रहे हैं और फिर उन्हें अपने डेटाबेस से जोड़ और हटा रहे हैं।
+
+
+
+
+
+
+    टीम के सदस्य: समर्थ, रनतेजबिर और दक्ष</string>
+    <string name="prompt_email">खोजें...🔍</string>
+    <string name="prompt_password">पासवर्ड</string>
+    <string name="action_sign_in">खोज</string>
+    <string name="action_sign_in_short">दाखिल करना</string>
+    <string name="welcome">स्वागत!</string>
+    <string name="invalid_username">मान्य उपयोगकर्ता नाम नहीं है</string>
+    <string name="invalid_password">पासवर्ड >5 अक्षर का होना चाहिए</string>
+    <string name="login_failed">लॉगिन विफल</string>
+    <string name="home_main">अक्षर</string>
+
+    <string name="activity_list_title">पासवर्ड </string>
+    <string name="activity_list_cat">दाखिल</string>
+    <string name="more_main">अधिक</string>
+    <string name="login_main">लॉग इन करें</string>
+    <string name="register_main">पंजीकरण करवाना</string>
+    <string name="email">ईमेल</string>
+    <string name="password">पासवर्ड</string>
+    <string name="add_to_list">सूची में शामिल</string>
+
 </resources>

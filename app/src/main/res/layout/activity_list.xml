@@ -29,7 +29,7 @@
 
 
         <TextView
-            android:id="@+id/anime_name"
+            android:id="@+id/name11"
             android:layout_width="match_parent"
             android:layout_height="95dp"
             android:text=" Title"
