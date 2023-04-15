@@ -13,8 +13,15 @@ import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 
-import com.cst2335.androidfinalproject.MainActivity;
-
+/**
+ * @author samar
+ * date:14/4/23
+ *This Java class expands on Android's Fragment class. It defines a fragment that may be used to look for more objects inside
+ *  of an application. The class has a button to start the search as well as an EditText box for the user to enter their search
+ *  terms. Using the SharedPreferences class, the user's search term is saved in shared preferences. The previously typed search
+ *  text is loaded and shown in the EditText box when the user accesses the search fragment again. When a user taps the search button,
+ *the search text is typed, saved in shared preferences, and launched with the MainActivity as an extra intent.
+ */
 public class search_more_Fragment2 extends Fragment {
 
     private EditText searchText;

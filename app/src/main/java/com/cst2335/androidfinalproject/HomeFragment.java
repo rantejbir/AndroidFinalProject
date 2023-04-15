@@ -7,6 +7,10 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 
+/**
+ * @author samar
+ * date: 14/4/23
+ */
 public class HomeFragment extends Fragment {
 
     public HomeFragment() {

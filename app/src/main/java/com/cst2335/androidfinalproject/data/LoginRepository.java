@@ -1,8 +1,8 @@
 package com.cst2335.androidfinalproject.data;
 
-import com.cst2335.androidfinalproject.data.model.LoggedInUser;
-
 /**
+ * @author samar
+ * date: 14/4/23
  * Class that requests authentication and user information from the remote data source and
  * maintains an in-memory cache of login status and user credentials information.
  */

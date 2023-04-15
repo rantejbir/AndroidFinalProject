@@ -17,8 +17,14 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.List;
 
 
-
-
+/**
+ * @author samar
+ * date: 14/4/23
+ * This class serves as an Android app's RecyclerView adapter. For each list item in the RecyclerView,
+ * the RecyclerViewAdapter2 extends RecyclerView.Adapter and creates a ViewHolder object. A context and a
+ * list of data are both acceptable inputs for the class.
+ * Each list item's layout is expanded by onCreateViewHolder(), which also sets an OnClickListener.
+ */
 public class RecyclerViewAdapter2 extends RecyclerView.Adapter<RecyclerViewAdapter2.MyViewHolder> {
 
     private Context mContext ;
