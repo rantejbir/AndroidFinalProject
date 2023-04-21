@@ -8,6 +8,7 @@ package com.cst2335.androidfinalproject.data.model;
  */
 public class LogInUser {
 
+
     private String userId;
     private String displayName;
 

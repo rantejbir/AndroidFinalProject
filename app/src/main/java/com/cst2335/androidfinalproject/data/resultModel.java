@@ -11,6 +11,7 @@ package com.cst2335.androidfinalproject.data;
 public class resultModel <T> {
     // hide the private constructor to limit subclass types (Success, Error)
 
+
     @Override
     public String toString() {
 
